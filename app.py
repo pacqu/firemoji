@@ -1,4 +1,5 @@
 import soundcloud
+import flickrapi
 
 from flask import Flask, redirect, render_template, request, session
 
