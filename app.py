@@ -5,8 +5,11 @@ from flask import Flask, redirect, render_template, request, session
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET,POST'])
+@app.route("/")#methods=['GET','POST'])
 def home():
+    #if (request.method == 'post'):
+    #   return render_template("home.html")
+   # else:
     return render_template("home.html")
 
 if __name__ == '__main__':
