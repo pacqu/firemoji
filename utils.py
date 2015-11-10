@@ -17,3 +17,5 @@ def findSong(input):
     print embed_info['html']
 
 #def findPic(input):
+
+findSong(Herd)
