@@ -16,5 +16,4 @@ def findSong(input):
     embed_info = client.get('/oembed', url=trackurl)
     print embed_info['html']
 
-def findPic(input):
-    
+#def findPic(input):
