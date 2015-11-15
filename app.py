@@ -12,6 +12,16 @@ def home():
     else:
         keyword = request.form['keyword']
         return render_template("home.html")
+'''
+def result():
+    if request.method == "GET":
+        return render_template("result.html")
+    else:
+        keyword = request.form['keyword']
+        return render_template("result.html")
+        
+I suck at backend... how do we pass a variable to the html page again?
+'''
 
 if __name__ == '__main__':
     app.dbug = True
