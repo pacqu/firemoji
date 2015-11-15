@@ -11,6 +11,7 @@ def findTrack(input):
 
 #Takes Track Object and creates a HTML for SoundCloud Widget of Track    
 def getWidget(track):
+    #Should be something here to take into account if track is null object
     trackurl = track.permalink_url
 
     embed_info = sclient.get('/oembed', url=trackurl)
