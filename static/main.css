@@ -14,6 +14,7 @@ div {
     border-radius: 25px;
     background-color: #FF993F;
 }
+/* class for result divs here */
 
 img {
     padding-top: 20px;
@@ -39,8 +40,3 @@ input[type=text] {
   border:2px solid #ccc; 
   border-radius: 5px;
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b2f03f06d331ccf10eb2b6a6486f97e9caf5ddc0
