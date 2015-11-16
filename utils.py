@@ -54,24 +54,13 @@ def picTitle(search):
 def picUser(search):
     photoset = flickr.photos.search(text = search, per_page='1')
     p = photoset['photos']['photo'][0]
-    print p
-    ownerid= str(p['owner'])
+    #print p
+    ownerid= p['owner']
     #print ownerid
-    j = flickr.people.getInfo(ownerid) '<==error is here'
-    '^ random variable cause I thought that it was the cause of an error'
+    user = flickr.people.getInfo(user_id='52673967@N00') 
     #print "anything"
-    print user[username]
+    return user['person']['username']['_content']
 
-
-#flickr = flickrapi.FlickrAPI(api_key, api_secret, format='parsed-json')
-#sets   = flickr.photosets.getList(user_id='73509078@N00')
-#title  = sets['photosets']['photoset'][0]['title']['_content']
-
-#print('First set title: %s' % title)
-
-getPic("Greg")
-picTitle("Greg")
-#picUser("Greg")
-
-#track = findTrack("Angels")
-# print getWidget(track) 
+print getPic("Greg")
+print picTitle("Greg")
+print picUser("Greg")
