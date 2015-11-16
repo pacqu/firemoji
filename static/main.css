@@ -3,7 +3,6 @@
      font-family:Tahoma, Geneva, sans-serif; /*Verdana, Geneva, sans-serif; */            
 }
 
-
 div {
     display: inline-block;
     position: fixed;
@@ -23,7 +22,7 @@ div {
     background: -moz-linear-gradient(#FF993F, white); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#FF993F, white); /* Standard syntax */
 }
-
+   
 .results {
     display: inline-block;
     position: static;

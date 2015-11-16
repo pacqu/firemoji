@@ -6,12 +6,12 @@
 <body>
   <h1>displaying <img src="../static/firemoji.png"/> for {{keyword}}</h1> <br>
   {% for i in range(5) %}
-  <h3> <img src="../static/firemoji.png"/> pic #{{i + 1}}</h3>
+  <h3> <img src="../static/firemoji.png"/> sight #{{i + 1}}</h3>
   <div class="results">
     <img style="height:75%;width:75%"src="{{imgset[i]['url']}}" class="indiv"> <br>
     <p style="font-size:15px">Title: {{imgset[i]['title']}} | Username: {{imgset[i]['user']}} </p>
   </div>
-  <h3> <img src="../static/firemoji.png"/> track #{{i + 1}}</h3>
+  <h3> <img src="../static/firemoji.png"/> sound #{{i + 1}}</h3>
   <p class="widget">
   {{soundset[i] | safe}}
   </p>
