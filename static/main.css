@@ -16,6 +16,20 @@ div {
 }
 /* class for result divs here */
 
+div .results {
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    margin-top:250px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    vertical-aling:middle;
+    border:1px solid #BF5900;
+    border-radius: 25px;
+    background-color: #FF993F;
+}
+
 img {
     padding-top: 20px;
     height:30%;
