@@ -40,26 +40,27 @@ def getPic(search):
     sec = str(p['secret'])
     imgurl = "https://farm" + farmid + ".staticflickr.com/" + servid + "/" + id + "_" + sec + ".jpg"
     return imgurl
-"""
-------------------------------JUSTIN---------------------------------------------------
-Currently, this works, but it just returns the JSON format of the one picture that we need to display
-The link to the picture (if using iframe) can be found at:
- "https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg"
-With all the things in {} being found in the JSON.
-I'm certain that the link works, as I've tried doing it manually, but I dont understand how to extract
-the information I need from the JSON that it returns via the computer.
-
-"""
 
 
-#flickr = flickrapi.FlickrAPI(api_key, api_secret, format='parsed-json')
-#sets   = flickr.photosets.getList(user_id='73509078@N00')
-#title  = sets['photosets']['photoset'][0]['title']['_content']
+#Returns the Title of the picture
+def picTitle(search):
+    photoset = flickr.photos.search(text = search, per_page='1')
+    p = photoset['photos']['photo'][0] 
+    title = p['title']
+    return title
 
-#print('First set title: %s' % title)
 
-getPic("Greg")
+#Returns the Username of the person who uploaded the picture
+def picUser(search):
+    photoset = flickr.photos.search(text = search, per_page='1')
+    p = photoset['photos']['photo'][0]
+    #print p
+    ownerid= p['owner']
+    #print ownerid
+    user = flickr.people.getInfo(user_id='52673967@N00') 
+    #print "anything"
+    return user['person']['username']['_content']
 
-
-#track = findTrack("Angels")
-# print getWidget(track) 
+print getPic("Greg")
+print picTitle("Greg")
+print picUser("Greg")
