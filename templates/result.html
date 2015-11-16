@@ -1,60 +1,23 @@
-<html>
+<!DOCTYPE HTML>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+<link type="test/css" rel="stylesheet" href="../static/main.css"/>
 </head>
-
 <body>
-<div class="section">
-	<div class="container">
-		<div class="row">
-			<h1>{{tags}}</h1>
-		</div>
-	</div>
-</div>
-
-<div class="section">
-	{{sWidget}}
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<!--Picture 1-->
-			<img src="{{img_1}}" class="img-responsive">
-		</div>
-		<div class="col-md-6">
-			<!--Picture 2-->
-			<img src="{{img_2}}" class="img-responsive">
-		</div>
-	</div>
-</div>
-<br>
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<!--Picture 3-->
-			<img src="{{img_3}}" class="img-responsive">
-		</div>
-		<div class="col-md-6">
-			<!--Picture 4-->
-			<img src="{{img_4}}" class="img-responsive">
-		</div>
-	</div>
-</div>
-<br>
-
-<div class="container">
-	<a class="btn btn-primary">Back</a>
-</div>
-<br>
-
+  <h1>displaying <img src="../static/firemoji.png"/> for {{keyword}}</h1> <br>
+  {% for i in range(5) %}
+  <h3> <img src="../static/firemoji.png"/> sight #{{i + 1}}</h3>
+  <div class="results">
+    <img style="height:75%;width:75%"src="{{imgset[i]['url']}}" class="indiv"> <br>
+    <p style="font-size:15px">Title: {{imgset[i]['title']}} | Flickr Username: {{imgset[i]['user']}} </p>
+  </div>
+  <h3> <img src="../static/firemoji.png"/> sound #{{i + 1}}</h3>
+  <p class="widget">
+  {{soundset[i] | safe}}
+  </p>
+  <br>
+  {% endfor%}
+  <form method="POST">
+  <input type="submit" value="back"/>  
+  </form>
 </body>
-
-</html>
