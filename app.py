@@ -22,9 +22,10 @@ def result(keyword="help"):
         return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
     else:
         #something for back button here
-        imgset = utils.getImgSet(keyword)
-        soundset = utils.getSoundSet(keyword)
-        return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
+        return redirect(url_for('home'))
+       # imgset = utils.getImgSet(keyword)
+       # soundset = utils.getSoundSet(keyword)
+       # return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
    
 if __name__ == '__main__':
     app.debug = True
