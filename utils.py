@@ -76,7 +76,7 @@ def getUser(photoset,i):
     p = photoset['photos']['photo'][i]
     ownerid= p['owner']
     #print ownerid
-    user = flickr.people.getInfo(user_id='52673967@N00') 
+    user = flickr.people.getInfo(user_id=ownerid) 
     #print "anything"
     return user['person']['username']['_content']
 
@@ -96,7 +96,8 @@ def getImgSet(search):
     p = getPhotoset(search)
     return getPics(p)
 
-#p = getPhotoset("Greg")
+#p = getImgSet("Greg")
 #print p
 #print getPics(p)
+
 #print getSoundSet("Greg")

@@ -12,16 +12,18 @@ def home():
         return render_template("home.html")
     else:
         keyword = request.form['keyword']
+        return redirect(url_for('result',keyword=keyword))
+
+@app.route("/result/<keyword>",methods=["GET","POST"])
+def result(keyword="help"):
+    if request.method == "GET":
         imgset = utils.getImgSet(keyword)
         soundset = utils.getSoundSet(keyword)
-        return redirect(url_for('result',keyword=keyword,imgset=imgset,soundset=soundset))
-
-@app.route("/result",methods=["GET","POST"])
-def result(keyword="",imgset=[],soundset=[]):
-    if request.method == "GET":
         return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
     else:
         #something for back button here
+        imgset = utils.getImgSet(keyword)
+        soundset = utils.getSoundSet(keyword)
         return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
    
 if __name__ == '__main__':
