@@ -4,19 +4,32 @@ import json
 
 sclient = soundcloud.Client(client_id='f9fa7918930dcdebe0fb80b9bec4e1c9')
 
-#Finds First SoundCloud Track based on Search Results of Inputted Query
-def findTrack(input):
-    track = sclient.get('/tracks',q=input)[0]
-    return track
+#Finds list of 4 SoundCloud Track based on Search Results of Inputted Query
+def getTrackset(input):
+    results = sclient.get('/tracks',q=input)
+    trackset =[] 
+    for x in range(0,4):
+        trackset.append(results[x])
+    return trackset
 
 
 #Takes Track Object and creates a HTML for SoundCloud Widget of Track    
 def getWidget(track):
     #Should be something here to take into account if track is null object
     trackurl = track.permalink_url
-
     embed_info = sclient.get('/oembed', url=trackurl)
     return embed_info.html
+
+def getWidgetSet(trackset):
+    widset = []
+    for x in range(0,len(trackset)):
+        widset.append(getWidget(trackset[x]))
+    return widset
+
+def getSoundSet(input):
+    t = getTrackset(input)
+    soundset = getWidgetSet(t)
+    return soundset
 
 
 #*********************Flickrapi******************************
@@ -78,7 +91,12 @@ def getPics(photoset):
             }
         imgset.append(dict)
     return imgset
-    
-p = getPhotoset("Greg")
+
+def getImgSet(search):
+    p = getPhotoset(search)
+    return getPics(p)
+
+#p = getPhotoset("Greg")
 #print p
-print getPics(p)
+#print getPics(p)
+#print getSoundSet("Greg")
