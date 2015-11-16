@@ -17,12 +17,12 @@ def home():
         return redirect(url_for('result',keyword=keyword,imgset=imgset,soundset=soundset))
 
 @app.route("/result",methods=["GET","POST"])
-def result():
+def result(keyword="",imgset=[],soundset=[]):
     if request.method == "GET":
-        return render_template("result.html")
+        return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
     else:
         #something for back button here
-        return render_template("result.html")
+        return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
    
 if __name__ == '__main__':
     app.debug = True
