@@ -4,12 +4,15 @@
 <link type="test/css" rel="stylesheet" href="../static/main.css"/>
 </head>
 <body>
-  displaying results for {{keyword}}
+  <h1>displaying <img src="../static/firemoji.png"/> for {{keyword}}</h1> <br>
   {% for i in range(4) %}
   <div class="results">
-    <img src="{{imgset[i]['url']}}">
-    Title: {{imgset[i]['title']}} | Username: {{imgset[i]['user']}}
+    <img style="height:75%;width:75%"src="{{imgset[i]['url']}}" class="indiv"> <br>
+    <p>Title: {{imgset[i]['title']}} | Username: {{imgset[i]['user']}} </p>
   </div>
-  {{soundset[i] | e}}
+  <p class="widget">
+  {{soundset[i] | safe}}
+  </p>
+  <br>
   {% endfor%}
 </body>
