@@ -28,7 +28,7 @@ flickr = flickrapi.FlickrAPI(api_key, api_secret,format='parsed-json')
 
 #With inputted search query, returns array of top 4 image urls from flickr
 def getPic(search):
-    photoset = flickr.photos.search(text=search, per_page='1')
+    photoset = flickr.photos.search(text=search, per_page='4')
     #Photoset is Dictionary, with sub-dict 'photos' representing all results, containing key 'photo' whose value is photos according to search query in 'photo',
     #key 'photo' contain list of sub-dicts that represent search-result photos
     #print photoset['photos']['photo']
@@ -41,7 +41,7 @@ def getPic(search):
         id = str(p['id'])
         sec = str(p['secret'])
         imgurl = "https://farm" + farmid + ".staticflickr.com/" + servid + "/" + id + "_" + sec + ".jpg"
-        imgset[x] = imgurl
+        imgset.append(imgurl)
     return imgset
 """
 ------------------------------JUSTIN---------------------------------------------------
@@ -61,7 +61,7 @@ the information I need from the JSON that it returns via the computer.
 
 #print('First set title: %s' % title)
 
-getPic("Greg")
+#getPic("Greg")
 
 
 #track = findTrack("Angels")

@@ -1,7 +1,8 @@
 import soundcloud
 import flickrapi
 
-from flask import Flask, redirect, render_template, request, session, utils
+from flask import Flask, redirect, render_template, request, session
+import utils
 
 app = Flask(__name__)
 
