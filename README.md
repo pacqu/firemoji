@@ -23,10 +23,10 @@ foundation:
 - [x] create base css
 - [x] create homepage template
 - [x] integrate soundcloud api
-- [ ] integrate flickr api
-- [ ] create results template that displays top track/result
+- [x] integrate flickr api
+- [x] create results template that displays top track/result
 
 extras:
-- [ ] display multiple track/pic results
+- [x] display multiple track/pic results
 - [ ] on homepage, choose whether results will be top or randomized from search list
 - [ ] more to come?
