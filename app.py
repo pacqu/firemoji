@@ -18,11 +18,11 @@ def home():
 #Using keyword from home page, will retrive images, sounds from utils and display 
 #Submit acts as a "back" button, sending user backhome
 @app.route("/result/<keyword>",methods=["GET","POST"])
-def result(keyword="help"):
+def result(keyword="default"):
     if request.method == "GET":
         imgset = utils.getImgSet(keyword)
         soundset = utils.getSoundSet(keyword)
-        return render_template("newsult.html",keyword=keyword,imgset=imgset,soundset=soundset)
+        return render_template("result.html",keyword=keyword,imgset=imgset,soundset=soundset)
     else:
         return redirect(url_for('home'))
           
